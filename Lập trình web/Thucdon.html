@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn</title>
+    <link rel="stylesheet" href="stylethucdon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="header-wrapper">
+        <header>
+            <div class="logo">
+                <img src="assets/1.png" alt="HealthyFood Logo">
+                <span>HealthyFood.VN</span>
+            </div>
+        
+            <nav class="main-menu">
+                <a href="Trangchu.html">Trang chủ</a>
+                <a href="Thucdon.html">Thực đơn</a>
+                <a href="DatHang.html">Đặt hàng</a>
+                <a href="TinTuc.html">Tin tức</a>
+                <a href="FAQs.html">FAQs</a>
+            </nav>
+    
+            <div class="right-menu">
+                <a href="#">Đăng ký</a>
+                <span>|</span>
+                <a href="#">Đăng nhập</a>
+                <span>|</span>
+                <a href="#"><img src="assets/globe2.svg.png" alt="Ngôn ngữ"> Tiếng Việt</a>
+                <span class="bottom">▼</span>
+                <div class="cart">
+                    <img src="assets/cart.png" alt="Giỏ hàng">
+                </div>
+            </div>
+        </header>
+    </div>
+    <div id="banner">
+        <div class="overlay"></div> <!-- Lớp phủ tạo độ mờ -->
+        <div class="content">
+            <h1>WEEKLY MEAL PLAN</h1>
+            <h2>14/10 - 18/10</h2>
+            <button>Đặt ngay</button>
+        </div>
+    </div>
+
+    <div class="menu-background">
+        <div id="menu-section">
+            <div class="text-section">
+                <h1>THỰC ĐƠN</h1>
+                <div class="orange-bar"></div>
+                <p class="description">Thực đơn Fitfood là sự kết hợp tinh tế của ẩm thực Đông Tây</p>
+                <p>Từng bữa ăn được thiết kế bởi bếp trưởng nhà hàng cùng đội ngũ dinh dưỡng để đảm bảo được sự cân bằng trong hương vị nhưng vẫn giữ được chất lượng ở mức cao nhất. Tất cả các món đều đảm bảo ko bột ngọt và ít đường.</p>
+            </div>
+    
+            <div class="week-selector">
+                <div class="week-navigation">
+                    <button class="prev-week">⟨⟨ TUẦN TRƯỚC</button>
+                    <span class="week-dates">14.10 ➔ 18.10</span>
+                    <button class="next-week">TUẦN SAU ⟩⟩</button>
+                </div>
+                <button  class="order-btn" onclick="location.href ='DatHang.html';">Đặt Ngay</button>
+            </div>
+            
+    
+            <div class="day-menu">
+                <div class="header-row">
+                    <div class="header-cell red-text">NGÀY</div>
+                    <div class="header-cell">SÁNG</div>
+                    <div class="header-cell">TRƯA</div>
+                    <div class="header-cell">TỐI</div>
+                </div>
+                <div class="menu-row">
+                    <div class="menu-day">
+                        <div class="day-circle">
+                            <span>T2</span>
+                            <span>14.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-item">
+                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
+                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
+                            <p class="calories">350 Kcal | 29, 10, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
+                            <p>Sichuan Beef with Noodles** (NEW)</p>
+                            <p class="calories">550 Kcal | 41, 28, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
+                            <p>Shrimp Pasta in Tomato Sauce</p>
+                            <p class="calories">460 Kcal | 35, 20, 34</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row">
+                    <div class="menu-day">
+                        <div class="day-circle">
+                            <span>T3</span>
+                            <span>15.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-item">
+                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
+                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
+                            <p class="calories">350 Kcal | 29, 10, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
+                            <p>Sichuan Beef with Noodles** (NEW)</p>
+                            <p class="calories">550 Kcal | 41, 28, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
+                            <p>Shrimp Pasta in Tomato Sauce</p>
+                            <p class="calories">460 Kcal | 35, 20, 34</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row">
+                    <div class="menu-day">
+                        <div class="day-circle">
+                            <span>T2</span>
+                            <span>14.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-item">
+                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
+                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
+                            <p class="calories">350 Kcal | 29, 10, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
+                            <p>Sichuan Beef with Noodles** (NEW)</p>
+                            <p class="calories">550 Kcal | 41, 28, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
+                            <p>Shrimp Pasta in Tomato Sauce</p>
+                            <p class="calories">460 Kcal | 35, 20, 34</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row">
+                    <div class="menu-day">
+                        <div class="day-circle">
+                            <span>T2</span>
+                            <span>14.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-item">
+                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
+                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
+                            <p class="calories">350 Kcal | 29, 10, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
+                            <p>Sichuan Beef with Noodles** (NEW)</p>
+                            <p class="calories">550 Kcal | 41, 28, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
+                            <p>Shrimp Pasta in Tomato Sauce</p>
+                            <p class="calories">460 Kcal | 35, 20, 34</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row">
+                    <div class="menu-day">
+                        <div class="day-circle">
+                            <span>T2</span>
+                            <span>14.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <div class="menu-item">
+                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
+                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
+                            <p class="calories">350 Kcal | 29, 10, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
+                            <p>Sichuan Beef with Noodles** (NEW)</p>
+                            <p class="calories">550 Kcal | 41, 28, 35</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
+                            <p>Shrimp Pasta in Tomato Sauce</p>
+                            <p class="calories">460 Kcal | 35, 20, 34</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="menu-background">
+        <div id="menu-section">
+            <div class="text-section">
+                <h1>THỰC ĐƠN CHAY</h1>
+                <div class="blue-bar"></div>
+            </div>
+    
+            <div class="week-selector">
+                <div class="week-navigation">
+                    <button class="prev-week">⟨⟨ TUẦN TRƯỚC</button>
+                    <span class="week-dates">14.10 ➔ 18.10</span>
+                    <button class="next-week">TUẦN SAU ⟩⟩</button>
+                </div>
+                <button class="order-btn_1" onclick="location.href ='DatHang.html';" >Đặt Ngay</button>
+            </div>
+            <div class="day-menu">
+                <div class="header-row_1">
+                    <div class="header-cell red-text_1">NGÀY</div>
+                    <div class="header-cell">MEAL1</div>
+                    <div class="header-cell">MEAL2</div>
+                </div>
+                <div class="menu-row_1">
+                    <div class="menu-day">
+                        <div class="day-circle_1">
+                            <span>T2</span>
+                            <span>14.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content_1">
+                        <div class="menu-item_1">
+                            <h3>XÍU MẠI CHAY</h3>
+                            <p>Vegetarian Meatball</p>
+                        </div>
+                        <div class="menu-item_1">
+                            <h3>**Gà chay sốt cam** (NEW)</h3>
+                            <p>**Vegetarian Chicken With Orange Sauce** (NEW)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row_1">
+                    <div class="menu-day">
+                        <div class="day-circle_1">
+                            <span>T3</span>
+                            <span>15.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content_1">
+                        <div class="menu-item_1">
+                            <h3>BÁNH BÔNG CẢI SỐT HUMMUS</h3>
+                            <p>Broccoli Pie served with Hummus Sauce</p>
+                        </div>
+                        <div class="menu-item_1">
+                            <h3>**Miến Gochujang chay** (NEW)</h3>
+                            <p>**Vegetarian Gochujang Vermicelli** (NEW)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row_1">
+                    <div class="menu-day">
+                        <div class="day-circle_1">
+                            <span>T4</span>
+                            <span>16.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content_1">
+                        <div class="menu-item_1">
+                            <h3>**Cà ri gà lát chay** (NEW)</h3>
+                            <p>**Vegetarian Chicken Curry** (NEW)</p>
+                        </div>
+                        <div class="menu-item_1">
+                            <h3>Bún thịt nướng chay</h3>
+                            <p>Vegetarian Grilled Pork and Brown Rice Vermicelli</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row_1">
+                    <div class="menu-day">
+                        <div class="day-circle_1">
+                            <span>T5</span>
+                            <span>17.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content_1">
+                        <div class="menu-item_1">
+                            <h3>CÀ TÍM DỒN RAU CỦ + Gạo lức nâu</h3>
+                            <p>Stuffed Eggplant Served With Brown Rice</p>
+                        </div>
+                        <div class="menu-item_1">
+                            <h3>TEMPEH CHIÊN GIÒN + SỐT MÈ RANG</h3>
+                            <p>Crunchy Tempeh With Sesame Sauce</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-row_1">
+                    <div class="menu-day">
+                        <div class="day-circle_1">
+                            <span>T6</span>
+                            <span>18.10</span>
+                        </div>
+                    </div>
+                    <div class="menu-content_1">
+                        <div class="menu-item_1">
+                            <h3>CẢI THẢO CUỘN GÀ CHAY</h3>
+                            <p>Vegetable Chicken Roll + Corn Vermicelli </p>
+                        </div>
+                        <div class="menu-item_1">
+                            <h3>**Cơm gà teriyaki chay** (NEW)</h3>
+                            <p>**Vegetarian Teriyaki Chicken** (NEW)</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+<div class="note-container">
+    <div class="note">
+        <h2>Note!</h2>
+        <p>Các phần ăn được tính toán calories cẩn thận. 
+            Chỉ số dinh dưỡng dưới tên phần ăn được liệt kê theo thứ tự Năng lượng (Kcal/Calories), 
+            Tinh Bột, Chất béo và Chất đạm.</p>
+        <p>Lưu ý: Các phần ăn của Fitfood luôn được giao lạnh, đựng trong
+            hộp nhựa thân thiện với lò vi sóng.
+            Vui lòng bảo quản lạnh sau khi nhận hàng và hâm nóng từ 2-3 phút 
+            trước khi dùng.</p>
+        <p>
+            Phần ăn bình thường chỉ bao gồm
+            thịt và rau củ, Tinh bột phức (gạo lức, gạo nâu, mì rau củ, bún, bánh mì nâu)
+            sẽ được gửi kèm trong phần ăn có ghi chú dấu (+) 
+        </p>
+    </div>
+</div>
+<div class="space_1"></div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="assets/1.png" alt="Logo HealthyFood">
+            <h2>HealthyFood.VN</h2>
+        </div>
+
+        <div class="footer-company-info">
+            <h3>Công ty TNHH HealthyFood Việt Nam</h3>
+            <p>Địa chỉ: Kim Liên, Lương Định Của, Đống Đa, Hà Nội</p>
+            <p>Điện thoại: (+84) 347 007 115 [hotline]</p>
+            <p>Email: info@healthyfood.vn</p>
+            <p>MST: 0000000 do sở kế hoạch cấp và đầu tư Hà Nội cấp ngày 10/10/2024</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Điều khoản chung</h3>
+            <ul>
+                <li>Chính sách quy định chung</li>
+                <li>Quy định hình thức thanh toán</li>
+                <li>Chính sách vận chuyển giao hàng</li>
+                <li>Chính sách bảo mật thông tin</li>
+            </ul>
+        </div>
+
+        <div class="footer-follow-us">
+            <h3>Theo dõi chúng tôi tại</h3>
+            <div class="social-icons">
+                <a href="#"><img src="assets/facebook (1).png" alt="Facebook"></a>
+                <a href="#"><img src="assets/ig.png" alt="Instagram"></a>
+                <a href="#"><img src="assets/youtb.png" alt="YouTube"></a>
+            </div>
+            <div class="footer-certification">
+                <img src="assets/bocongthuong.webp" alt="Bộ Công Thương">
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
