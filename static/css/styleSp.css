@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kufam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
+
+/* Tổng thể header */
+#header-wrapper {
+    background-color: #333; 
+    padding: 10px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: white;
+    font-family: "Kadwa", sans-serif;
+    padding-left: 30px;
+}
+
+/* Logo bên trái */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px; 
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Menu điều hướng */
+.main-menu a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px; 
+    font-family: 'Itim', cursive;
+    transition: color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.main-menu a:hover {
+    color: #ddd; /* Màu khi hover */
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.right-menu a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Itim', cursive; /* Sử dụng font Itim cho các liên kết bên phải */
+}
+
+.right-menu img {
+    width: 20px; /* Kích thước biểu tượng ngôn ngữ và giỏ hàng */
+    vertical-align: middle; /* Căn giữa biểu tượng với chữ */
+    filter: brightness(0) invert(1); /* Chuyển biểu tượng thành màu trắng */
+    -webkit-filter: brightness(0) invert(1);
+}
+
+.right-menu span {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+/* Phần giỏ hàng */
+.cart {
+    position: relative;
+    display: inline-block;
+
+}
+#header-wrapper .cart #cart-count {
+    position: absolute;
+    top: -5px; /* Điều chỉnh vị trí từ trên xuống */
+    right: -15px; /* Điều chỉnh vị trí từ phải sang */
+    background-color: #FF6600; /* Nền màu đen */
+    color: white; /* Màu đỏ cho số */
+    font-size: 12px; /* Kích thước chữ nhỏ */
+    padding: 2px 4px; /* Tạo khoảng đệm cho số */
+    border-radius: 50%; /* Tạo nền tròn */
+    display: none; /* Ẩn mặc định, hiển thị khi có sản phẩm */
+    font-weight: bold; /* Đậm chữ */
+    line-height: 1;
+    min-width: 18px; /* Đảm bảo có chiều rộng tối thiểu cho hình tròn */
+    text-align: center;
+}
+.cart img {
+    width: 40px; /* Kích thước biểu tượng giỏ hàng lớn hơn */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+/* Container for the steps */
+.step-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.step_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: #969696; /* Gray color for inactive steps */
+    color: #333; /* Text color for inactive steps */
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+}
+.step_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: #bababa; /* Gray color for inactive steps */
+    color: #333; /* Text color for inactive steps */
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+}
+.step_3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: #dbdbdb; /* Gray color for inactive steps */
+    color: #333; /* Text color for inactive steps */
+    border-radius: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.step-active {
+    background-color: #FF6600; /* Red for the active step */
+    color: white;
+}
+
+.step-active::after {
+    border-left-color: #ff4d4d; /* Arrow color matches the active step */
+}
+
+/* Icons for each step */
+.step_1 i {
+    margin-right: 10px;
+}
+.step_2 i {
+    margin-right: 10px;
+}.step_3 i {
+    margin-right: 10px;
+}.step_4 i {
+    margin-right: 10px;
+}
+
+/* Adjust active step styling */
+.step.step-active {
+    background-color: #ff4d4d; /* Match the red color from the image */
+    color: white;
+}
+
+/* Active step's arrow */
+.step.step-active:not(:last-child)::after {
+    border-left-color: #ff4d4d;
+}
+
+.product-section {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    flex: 1;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-details {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.product-details h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-details ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.product-details ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.price {
+    font-size: 24px;
+    color: #ff3e3e;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff3e3e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-to-cart:hover {
+    background-color: #e60000;
+}
+.menu-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu-image img {
+    width: 100%; /* Makes the image responsive */
+    max-width: 800px; /* Sets a maximum width */
+    border-radius: 10px; /* Optional: Adds a slight border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better aesthetics */
+}
+.space_1 {
+    background-color:#f4f4f4 ;
+    height: 70px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+    font-family: "Kadwa", sans-serif;
+}
+
+.footer-company-info,
+.footer-links,
+.footer-follow-us {
+    max-width: 300px;
+}
+
+.footer-company-info h3,
+.footer-links h3,
+.footer-follow-us h3 {
+    color: #ff6b00;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Kadwa", sans-serif;
+
+}
+
+.footer-company-info p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-family: "Kadwa", sans-serif;
+    font-size: 13px;
+
+}
+
+.footer-links ul {
+    font-family: "Kadwa", sans-serif;
+    font-size: 13px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-follow-us .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-follow-us .social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-certification img {
+    width: 100px;
+}
+
+.footer-follow-us h3 {
+    margin-bottom: 10px;
+    color: #ff6b00;
+}
+
+
+#cart-summary {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden to the right */
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: right 0.4s ease;
+}
+
+#cart-summary.active {
+    right: 0; /* Cart slides in */
+}
+
+#cart-summary-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f7f7f7;
+    margin-bottom: 20px;
+    height: auto;
+    align-items: center;
+}
+#cart-summary-header h3 {
+ font-family: "Khmer";
+ font-size: 20px;
+ font-weight: bold;
+ margin-top: 5px;
+}
+.close-btn {
+    background-color: transparent; /* Bỏ nền */
+    color: red;                    /* Màu đỏ để nổi bật */
+    border: none;                  /* Bỏ viền */
+    font-size: 18px;               /* Kích thước lớn hơn */
+    cursor: pointer;               /* Con trỏ thành hình tay khi hover */
+    transition: color 0.3s ease;   /* Hiệu ứng chuyển đổi màu khi hover */
+}
+.close-btn:hover {
+    color: darkred;                /* Đổi màu thành đỏ đậm khi hover */
+}
+
+
+#cart-items {
+    padding: 20px;
+    max-height: 70%;
+    overflow-y: auto;
+}
+
+.order-btn {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Blur background when cart is open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Style for the total price */
+#cart-summary-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: left;
+}
+.temp-total {
+    font-size: 18px;               /* Kích thước chữ */
+    font-weight: bold;
+    margin-bottom: 10px;           /* Khoảng cách với nút đặt hàng */
+    color: red;                   /* Màu chữ mặc định */
+}
+
+.order-btn {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #FF6600;     /* Màu nền nút */
+    color: white;                  /* Màu chữ */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.order-btn:hover {
+    background-color: darkred;     /* Màu nền khi hover */
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-info img {
+    margin-right: 10px;
+    border-radius: 5px;
+
+}
