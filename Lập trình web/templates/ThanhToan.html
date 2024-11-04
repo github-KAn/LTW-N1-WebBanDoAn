@@ -34,6 +34,7 @@
         <p>Bạn vui lòng nhập địa chỉ để chúng tôi giao hàng cho bạn.</p>
         <button class="add-address-btn" onclick="openAddressForm()">+ Thêm địa chỉ mới</button>
         <!-- Form thêm địa chỉ mới -->
+    </div>
     <div id="addressForm" class="modal">
         <div class="modal-content">
             <h2>Thêm Địa Chỉ Mới</h2>
@@ -74,11 +75,9 @@
                 </div>
             </form>
         </div>
-
     </div>
-        <script src="{{ url_for('static', filename='js/scriptThanhtoan.js') }}"></script>
 
-    </div>
+    <script src="{{ url_for('static', filename='js/scriptThanhToan.js') }}"></script>
 
     <!-- Bảng sản phẩm -->
     <div class="table-header">
@@ -88,27 +87,21 @@
         <div>Tổng đơn hàng</div>
     </div>
 
-    <!-- Hiển thị từng sản phẩm trong giỏ hàng -->
-{% for item in cart_items %}
-<div class="product-section">
-    <div class="product-info">
-        <img src="{{ item['image'] }}" alt="{{ item['name'] }}">
-        <span class="product-name">{{ item['name'] }}</span>
+    <!-- Khối chứa sản phẩm -->
+    <div id="cart-items-container">
+        <!-- Sản phẩm sẽ được chèn vào đây bằng JavaScript -->
     </div>
-    <span class="product-price">{{ "{:,.0f}".format(item['price']) if item['price'] is not none and item['price'] >= 0 else 'N/A' }}đ</span>
-    <span class="product-quantity">{{ item['quantity'] if item['quantity'] is not none and item['quantity'] >= 0 else 0 }}</span>
-    <span class="product-total">{{ "{:,.0f}".format(item['price'] * item['quantity']) if item['price'] is not none and item['quantity'] is not none else 'N/A' }}đ</span>
-</div>
-{% endfor %}
 
-<!-- Tính tổng đơn hàng -->
-<!-- Tính tổng đơn hàng -->
-<div class="summary-section">
-    <span class="summary-total">
-        <span class="tamtinh">Tạm tính :</span>
-        {{ "{:,.0f}".format(subtotal) }}đ
-    </span>
-</div>
+    <!-- Khối tổng đơn hàng -->
+    <div class="summary-section">
+        <div class="summary-details">
+            <p>Phí ship: <s>100,000đ</s></p>
+            <p>Giảm giá: <span>0đ</span></p>
+            <p class="sum"><strong>Tổng đơn hàng:</strong> <span id="total-price"></span></p>
+        </div>
+    </div>
+
+
 
 
     <div class="container">
@@ -152,25 +145,17 @@
             <h2>Note</h2>
             <textarea class="input-box" rows="3" placeholder="Ghi chú về địa chỉ giao hàng, số nhà, chung cư, tên tòa nhà văn phòng,..."></textarea>
         </div>
+    </div>
 
-        <!-- Khối tổng đơn hàng -->
-        <div class="summary-section">
-            <div class="summary-details">
-                <p>Phí ship: {{ "{:,.0f}".format(shipping_fee) }}đ</p>
-                <p>Giảm giá: <span>{{ "{:,.0f}".format(discount) }}đ</span></p>
-                <p class="sum"><strong>Tổng đơn hàng:</strong>
-                    <span>{{ "{:,.0f}".format((cart_items | sum(attribute='price')) + shipping_fee - discount) }}đ</span>
-                </p>
-            </div>
-        </div>
 
         <!-- Nút hoàn thành và trở về -->
         <div class="button-section">
-            <button class="button-back">Trở về</button>
+            <button><a href="{{ url_for('dat_hang') }}"  class="button-back">Trở về</a></button>
             <a class="button-complete" href="{{ url_for('xac_nhan') }}">Hoàn thành</a>
         </div>
     </div>
-</div>
     <div class="space_1"></div>
+
+
 
 {% endblock %}

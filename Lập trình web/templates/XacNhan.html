@@ -1,6 +1,6 @@
 {% extends "inherit.html" %}
 
-{% block title %}Đặt Hàng{% endblock %}
+{% block title %}Xác Nhận{% endblock %}
 
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleXacnhan.css') }}">
@@ -45,53 +45,54 @@
             </ul>
         </div>
         <div class="chitietdonhang"><p>Chi tiết đơn hàng</p></div>
+
+        <script src="{{ url_for('static', filename='js/scriptXacnhan.js') }}"></script>
+
         <div class="order_1">
+            <!-- Bảng sản phẩm -->
             <div class="order-header">
-                <div class="order-label">Tên Sản phẩm</div>
-                <div class="order-label">Giá</div>
-                <div class="order-label">Số lượng</div>
+                <div class="order-label">Tên sản phẩm</div>
+                <div class="order-label-pr">Giá</div>
+                <div class="order-label-qtt">Số lượng</div>
                 <div class="order-label">Tổng</div>
             </div>
 
-            <div class="order-row">
-                <div class="order-label">Gói SLIM (*new) (5 ngày)</div>
-                <div class="order-value">600,000</div>
-                <div class="order-value">1</div>
-                <div class="order-value">600,000</div>
+            <!-- Khối chứa sản phẩm -->
+            <div id="cart-items-container">
+                <!-- Sản phẩm sẽ được chèn vào đây bằng JavaScript -->
             </div>
 
             <div class="order-row">
-                <div class="order-label">Tạm tính</div>
-                <div class="order-value">600,000</div>
+                <div class="order-label-product">Phí ship</div>
+                <div class="order-value"><s>100,000đ</s></div>
             </div>
 
             <div class="order-row">
-                <div class="order-label">Phí ship</div>
-                <div class="order-value">25,000</div>
-            </div>
-
-            <div class="order-row">
-                <div class="order-label">Mã khuyến mãi</div>
+                <div class="order-label-product">Mã khuyến mãi</div>
                 <div class="order-value">0</div>
             </div>
 
             <div class="order-row">
-                <div class="order-label">Giảm giá</div>
+                <div class="order-label-product">Giảm giá</div>
                 <div class="order-value">0</div>
             </div>
 
             <div class="order-row">
-                <div class="order-label">Phí đổi món</div>
+                <div class="order-label-product">Phí đổi món</div>
                 <div class="order-value">0</div>
             </div>
 
             <div class="separator">----------------------------------</div>
 
             <div class="order-total-row">
-                <div class="order-label">Tổng đơn hàng</div>
-                <div class="order-value">625,000</div>
+                    <div class="order-label-product"><strong>Tổng đơn hàng</strong></div>
+                    <div class="order-value"><span id="total-price"></span></div>
             </div>
         </div>
+
+
+
+
 
 <div class="menu-container">
     <p>HealthyFood xin gửi kèm Thực đơn:</p>
@@ -209,8 +210,14 @@
     <p>Bạn vui lòng thực hiện thanh toán vào ngày đầu tiên khi Shipper giao hàng.</p>
     <p>*** Fitfood cám ơn bạn đã đặt hàng. Chúng tôi hy vọng bạn sẽ hài lòng với dịch vụ của Fitfood! ***</p>
 </div>
-
+<!-- Nút xác nhận và trở về -->
+        <div class="button-section">
+            <button><a href="{{ url_for('thanh_toan') }}"  class="button-back">Trở về</a></button>
+            <a class="button-complete" href="#" onclick="confirmOrder()">Xác nhận</a>
+        </div>
     </div>
+
 </div>
+
 <div class="space_1"></div>
 {% endblock %}

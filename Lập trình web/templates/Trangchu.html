@@ -13,6 +13,9 @@
     #banner {
         background-image: url("{{ url_for('static', filename='images/banner.png') }}");
     }
+        .btn-head {
+            color: white;
+        }
     </style>
 
 
@@ -25,7 +28,7 @@
                 <span>THƯỢNG HẠNG</span>
             </h2>
             <p>Chuyên cung cấp các món ăn đảm bảo dinh dưỡng hợp vệ sinh đến người dùng, phục vụ người dùng một cách hoàn hảo nhất</p>
-            <button>Mua ngay</button>
+            <button><a href="{{ url_for('dat_hang') }}" class="btn-head">Mua ngay</a></button>
         </div>
     </div>
 
@@ -95,56 +98,56 @@
                 <div class="name">Gói fit 1</div>
                 <div class="desc">Sáng - Trưa</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/fit2.jpg') }}">
                 <div class="name">Gói fit 2</div>
                 <div class="desc">Sáng - Tối</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/fit3.jpg') }}">
                 <div class="name">Gói fit 3</div>
                 <div class="desc">Trưa - Tối</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/fullfit.jpg') }}">
                 <div class="name">Gói full</div>
                 <div class="desc">Sáng - Trưa - Tối</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/chay.jpg') }}">
                 <div class="name">Gói chay</div>
                 <div class="desc">Sáng - Trưa</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/slim.png') }}">
                 <div class="name">Gói slim </div>
                 <div class="desc">Sáng - Trưa</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/lunch.png') }}">
                 <div class="name">Gói LUNCH</div>
                 <div class="desc">Trưa</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
             <div class="item">
                 <img src="{{ url_for('static', filename='images/meat.jpg') }}">
                 <div class="name">Gói MEAT</div>
                 <div class="desc">Sáng - Trưa</div>
                 <div class="time">1 tuần - 1 tháng</div>
-                <div class="iconproduct" > <img src="{{ url_for('static', filename='images/cart.png') }}" ></div>
+
             </div>
         </div>
     </div>

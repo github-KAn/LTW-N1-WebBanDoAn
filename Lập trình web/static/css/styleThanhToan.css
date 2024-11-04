@@ -460,5 +460,8 @@ textarea.input-box {
 }
 .space_1 {
     background-color: #f4f4f4;
+}
 
+.product-quantity {
+    margin-left: 0;
 }

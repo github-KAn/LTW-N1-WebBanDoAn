@@ -17,11 +17,11 @@
         <div class="product">
             {% for package in packages %}
             <div class="item" data-name="{{ package.name }}" data-price="{{ package.price }}" data-image="{{ url_for('static', filename=package.image) }}">
-                <img src="{{ url_for('static', filename=package.image) }}">
-                <div class="name">{{ package.name }}</div>
-                <div class="desc">{{ package.description }}</div>
-                <div class="time">{{ package.duration }}</div>
-                <div class="price">{{ "{:,.0f}đ".format(package.price) }}</div>
+                    <img src="{{ url_for('static', filename=package.image) }}">
+                    <div class="name">{{ package.name }}</div>
+                    <div class="desc">{{ package.description }}</div>
+                    <div class="time">{{ package.duration }}</div>
+                    <div class="price">{{ "{:,.0f}đ".format(package.price) }}</div>
                 <!-- <p>ID: {{ package._id }}</p> -->  <!-- Đã comment ID -->
                 <div class="iconproduct"><img src="{{ url_for('static', filename='images/cart.png') }}"></div>
             </div>
@@ -79,7 +79,6 @@
                 <div class="name">{{ gift['name'] }}</div>
                 <div class="desc_1">{{ gift['price'] | number_format(0, '.', ',') }}đ</div>
                 <div class="time">{{ gift['time'] }}</div>
-                <!-- <p>ID: {{ gift._id }}</p> -->  <!-- Đã comment ID -->
                 <div class="iconproduct"><img src="{{ url_for('static', filename='images/cart.png') }}"></div>
             </div>
             {% endfor %}
@@ -110,5 +109,6 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+
 
 {% endblock %}

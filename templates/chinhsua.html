@@ -1,52 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chỉnh sửa</title>
-    <link rel="stylesheet" href="../static/css/stylechinhsua.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-    <div id="header-wrapper">
-        <header>
-            <div class="logo">
-                <img src="../assets/1.png" alt="HealthyFood Logo">
-                <span>HealthyFood.VN</span>
-            </div>
-        
-            <nav class="main-menu">
-                <a href="Trangchu.html">Trang chủ</a>
-                <a href="Thucdon.html">Thực đơn</a>
-                <a href="DatHang.html">Đặt hàng</a>
-                <a href="TinTuc.html">Tin tức</a>
-                <a href="FAQs.html">FAQs</a>
-            </nav>
-    
-            <div class="right-menu">
-                <a href="#"id="openRegister" >Đăng ký</a>
-                <span>|</span>
-                <a href="#"id="openLogin">Đăng nhập</a>
-                <span>|</span>
-                <a href="#"><img src="../assets/globe2.svg.png" alt="Ngôn ngữ"> Tiếng Việt</a>
-                <span class="bottom">▼</span>
-                <div class="cart">
-                    <img src="../assets/cart.png" alt="Giỏ hàng">
-                    <span id="cart-count">0</span>
-                </div>
-            </div>
-        </header>
-</div>
+{% extends "inherit.html" %}
+
+{% block title %}Thanh Toán{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylechinhsua.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
 <div class="container_1">
     <div class="step-container">
         <div class="step-container">
-            <div class="step_1 step-active">
+            <a class="step_1 step-active" href="{{ url_for('dat_hang') }}">
                 <i class="fas fa-shopping-cart"></i> Đặt hàng
-            </div>
-            <div class="step_1">
+            </a>
+            <a class="step_1" href="{{ url_for('chinh_sua') }}">
                 <i class="fas fa-edit"></i> Chỉnh sửa
-            </div>
-            <div class="step_2">
+            </a>
+            <div class="step_2" >
                 <i class="fas fa-dollar-sign"></i> Thanh toán
             </div>
             <div class="step_3">
@@ -63,14 +35,14 @@
         <div class="package">
             <span class="package-name">Gói LUNCH</span>
             <span class="package-price">349,000đ</span>
-            
+
             <div class="action-buttons">
                 <button class="save-button">Lưu</button>
                 <button class="delete-button">Xóa</button>
                 <button class="toggle-button">▼</button>
             </div>
         </div>
-        
+
         <div class="collapsible-content">
             <div class="menu-background">
                 <div id="menu-section">
@@ -78,7 +50,7 @@
                     <!-- Content continues as in your provided block -->
                     <div class="menu-background">
 
-                    
+
                             <div class="day-menu">
                                 <div class="header-row">
                                     <div class="header-cell red-text">NGÀY</div>
@@ -86,258 +58,47 @@
                                     <div class="header-cell">TRƯA</div>
                                     <div class="header-cell">TỐI</div>
                                 </div>
-                                <div class="menu-row">
-                                    <div class="menu-day">
-                                        <div class="day-circle">
-                                            <span>T2</span>
-                                            <span>14.10</span>
+
+                                 {% for day_menu in menu_items %}
+                                    <div class="menu-row">
+                                        <div class="menu-day">
+                                            <div class="day-circle">
+                                                <span>{{ day_menu.day }}</span>
+                                                <span>{{ day_menu.date }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="menu-content">
+                                            {% for item in day_menu.menu_items_list %}
+                                                <div class="menu-item">
+                                                    <h3>{{ item.name }}</h3>
+                                                    <p>{{ item.description }}</p>
+                                                    <p class="calories">{{ item.calories }} Kcal | {{ item.nutrition }}</p>
+                                                    <div class="quantity-control">
+                                                        <button class="quantity-btn decrease">-</button>
+                                                        <span class="quantity">0</span>
+                                                        <button class="quantity-btn increase">+</button>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
                                         </div>
                                     </div>
-                                    <div class="menu-content">
-                                        <div class="menu-item">
-                                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
-                                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
-                                            <p class="calories">350 Kcal | 29, 10, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
-                                            <p>Sichuan Beef with Noodles** (NEW)</p>
-                                            <p class="calories">550 Kcal | 41, 28, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
-                                            <p>Shrimp Pasta in Tomato Sauce</p>
-                                            <p class="calories">460 Kcal | 35, 20, 34</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu-row">
-                                    <div class="menu-day">
-                                        <div class="day-circle">
-                                            <span>T3</span>
-                                            <span>15.10</span>
-                                        </div>
-                                    </div>
-                                    <div class="menu-content">
-                                        <div class="menu-item">
-                                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
-                                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
-                                            <p class="calories">350 Kcal | 29, 10, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
-                                            <p>Sichuan Beef with Noodles** (NEW)</p>
-                                            <p class="calories">550 Kcal | 41, 28, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
-                                            <p>Shrimp Pasta in Tomato Sauce</p>
-                                            <p class="calories">460 Kcal | 35, 20, 34</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu-row">
-                                    <div class="menu-day">
-                                        <div class="day-circle">
-                                            <span>T2</span>
-                                            <span>14.10</span>
-                                        </div>
-                                    </div>
-                                    <div class="menu-content">
-                                        <div class="menu-item">
-                                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
-                                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
-                                            <p class="calories">350 Kcal | 29, 10, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
-                                            <p>Sichuan Beef with Noodles** (NEW)</p>
-                                            <p class="calories">550 Kcal | 41, 28, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
-                                            <p>Shrimp Pasta in Tomato Sauce</p>
-                                            <p class="calories">460 Kcal | 35, 20, 34</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu-row">
-                                    <div class="menu-day">
-                                        <div class="day-circle">
-                                            <span>T2</span>
-                                            <span>14.10</span>
-                                        </div>
-                                    </div>
-                                    <div class="menu-content">
-                                        <div class="menu-item">
-                                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
-                                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
-                                            <p class="calories">350 Kcal | 29, 10, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
-                                            <p>Sichuan Beef with Noodles** (NEW)</p>
-                                            <p class="calories">550 Kcal | 41, 28, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
-                                            <p>Shrimp Pasta in Tomato Sauce</p>
-                                            <p class="calories">460 Kcal | 35, 20, 34</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu-row">
-                                    <div class="menu-day">
-                                        <div class="day-circle">
-                                            <span>T2</span>
-                                            <span>14.10</span>
-                                        </div>
-                                    </div>
-                                    <div class="menu-content">
-                                        <div class="menu-item">
-                                            <h3>SALAD GÀ CAJUN BALSAMIC</h3>
-                                            <p>Cajun Chicken Salad W Balsamic Sauce</p>
-                                            <p class="calories">350 Kcal | 29, 10, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>**BÒ TỨ XUYÊN + BÚN GẤC** (NEW)</h3>
-                                            <p>Sichuan Beef with Noodles** (NEW)</p>
-                                            <p class="calories">550 Kcal | 41, 28, 35</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                        <div class="menu-item">
-                                            <h3>MÌ Ý TÔM SỐT CÀ</h3>
-                                            <p>Shrimp Pasta in Tomato Sauce</p>
-                                            <p class="calories">460 Kcal | 35, 20, 34</p>
-                                            <div class="quantity-control">
-                                                <button class="quantity-btn decrease">-</button>
-                                                <span class="quantity">0</span>
-                                                <button class="quantity-btn increase">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="../static/scripts/scriptchinhsua.js" ></script>
+        <script src="{{ url_for('static', filename='js/scriptchinhsua.js') }}"></script>
         <div class="order-total">
             <span class="total-label">Tổng đơn hàng:</span>
             <span class="total-price">349,000đ</span>
-            <button class="order-button">Đặt hàng</button>
+            <a class="order-button" href="{{ url_for('thanh_toan') }}">Đặt hàng</a>
         </div>
     </div>
-</div>
     <div class="space_1"></div>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="../assets/1.png" alt="Logo HealthyFood">
-                <h2>HealthyFood.VN</h2>
-            </div>
-    
-            <div class="footer-company-info">
-                <h3>Công ty TNHH HealthyFood Việt Nam</h3>
-                <p>Địa chỉ: Kim Liên, Lương Định Của, Đống Đa, Hà Nội</p>
-                <p>Điện thoại: (+84) 347 007 115 [hotline]</p>
-                <p>Email: info@healthyfood.vn</p>
-                <p>MST: 0000000 do sở kế hoạch cấp và đầu tư Hà Nội cấp ngày 10/10/2024</p>
-            </div>
-    
-            <div class="footer-links">
-                <h3>Điều khoản chung</h3>
-                <ul>
-                    <li>Chính sách quy định chung</li>
-                    <li>Quy định hình thức thanh toán</li>
-                    <li>Chính sách vận chuyển giao hàng</li>
-                    <li>Chính sách bảo mật thông tin</li>
-                </ul>
-            </div>
-    
-            <div class="footer-follow-us">
-                <h3>Theo dõi chúng tôi tại</h3>
-                <div class="social-icons">
-                    <a href="#"><img src="../assets/facebook (1).png" alt="Facebook"></a>
-                    <a href="#"><img src="../assets/ig.png" alt="Instagram"></a>
-                    <a href="#"><img src="../assets/youtb.png" alt="YouTube"></a>
-                </div>
-                <div class="footer-certification">
-                    <img src="../assets/bocongthuong.webp" alt="Bộ Công Thương">
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+
+{% endblock %}

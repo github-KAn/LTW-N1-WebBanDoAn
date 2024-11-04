@@ -2,110 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend Tera&family=Kufam:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open Sans&family=Roboto:wght@400;700&display=swap');
-/* Tổng thể header */
-#header-wrapper {
-    background-color: #333; 
-    padding: 10px 0;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    color: white;
-    font-family: "Kadwa", sans-serif;
-    padding-left: 30px;
-}
-
-/* Logo bên trái */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo img {
-    width: 60px; 
-    margin-bottom: 5px;
-    border-radius: 50%;
-}
-
-.logo span {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Menu điều hướng */
-.main-menu a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px; 
-    font-family: 'Itim', cursive;
-    transition: color 0.3s ease; /* Hiệu ứng khi hover */
-}
-
-.main-menu a:hover {
-    color: #ddd; /* Màu khi hover */
-}
-
-.right-menu {
-    display: flex;
-    align-items: center;
-}
-
-.right-menu a {
-    color: white;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'Itim', cursive; /* Sử dụng font Itim cho các liên kết bên phải */
-}
-
-.right-menu img {
-    width: 20px; /* Kích thước biểu tượng ngôn ngữ và giỏ hàng */
-    vertical-align: middle; /* Căn giữa biểu tượng với chữ */
-    filter: brightness(0) invert(1); /* Chuyển biểu tượng thành màu trắng */
-    -webkit-filter: brightness(0) invert(1);
-}
-
-.right-menu span {
-    color: white;
-    margin: 0 10px;
-    font-size: 18px;
-}
-
-/* Phần giỏ hàng */
-.cart {
-    position: relative;
-    display: inline-block;
-
-}
-#header-wrapper .cart #cart-count {
-    position: absolute;
-    top: -5px; /* Điều chỉnh vị trí từ trên xuống */
-    right: -15px; /* Điều chỉnh vị trí từ phải sang */
-    background-color: #FF6600; /* Nền màu đen */
-    color: white; /* Màu đỏ cho số */
-    font-size: 12px; /* Kích thước chữ nhỏ */
-    padding: 2px 4px; /* Tạo khoảng đệm cho số */
-    border-radius: 50%; /* Tạo nền tròn */
-    display: none; /* Ẩn mặc định, hiển thị khi có sản phẩm */
-    font-weight: bold; /* Đậm chữ */
-    line-height: 1;
-    min-width: 18px; /* Đảm bảo có chiều rộng tối thiểu cho hình tròn */
-    text-align: center;
-}
-.cart img {
-    width: 40px; /* Kích thước biểu tượng giỏ hàng lớn hơn */
-}
 /* Thiết lập banner với hình ảnh nền */   
 /* Style cho phần header và bar */
 #wp-product {
@@ -197,7 +94,13 @@ header {
     text-align: left;
     margin-left: 10px;
 }
-
+.item .price {
+    font-size: 16px;
+    color: #FF6600;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 10px;
+}
 /* Style cho icon giỏ hàng */
 .iconproduct {
     position: absolute;
@@ -235,94 +138,7 @@ header {
 }
 .space_1 {
     background-color:#e5e5e5 ;
-    height: 70px;
-}
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-    font-family: 'Arial', sans-serif;
-}
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 100px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.footer-logo h2 {
-    font-size: 24px;
-    color: #fff;
-    margin: 0;
-    font-family: "Kadwa", sans-serif;
-}
-
-.footer-company-info,
-.footer-links,
-.footer-follow-us {
-    max-width: 300px;
-}
-
-.footer-company-info h3,
-.footer-links h3,
-.footer-follow-us h3 {
-    color: #ff6b00;
-    margin-bottom: 10px;
-    font-size: 15px;
-    font-family: "Kadwa", sans-serif;
-
-}
-
-.footer-company-info p {
-    margin: 5px 0;
-    line-height: 1.6;
-    font-family: "Kadwa", sans-serif;
-    font-size: 13px;
-
-}
-
-.footer-links ul {
-    font-family: "Kadwa", sans-serif;
-    font-size: 13px;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-follow-us .social-icons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.footer-follow-us .social-icons img {
-    width: 30px;
-    height: 30px;
-}
-
-.footer-certification img {
-    width: 100px;
-}
-
-.footer-follow-us h3 {
-    margin-bottom: 10px;
-    color: #ff6b00;
 }
 
 
@@ -378,7 +194,7 @@ footer {
     overflow-y: auto;
 }
 
-.order-btn {
+.order-btn, .cart-link {
     background-color: red;
     color: white;
     padding: 15px;
@@ -419,7 +235,9 @@ footer {
     color: red;                   /* Màu chữ mặc định */
 }
 
-.order-btn {
+.order-btn, .cart-link {
+    display: block;
+    text-align: center;
     width: 100%;
     padding: 10px 20px;
     background-color: #FF6600;     /* Màu nền nút */
@@ -429,7 +247,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.order-btn:hover {
+.order-btn:hover, .cart-link:hover {
     background-color: darkred;     /* Màu nền khi hover */
 }
 .cart-item {
@@ -447,8 +265,47 @@ footer {
 .cart-item-info img {
     margin-right: 10px;
     border-radius: 5px;
-
 }
+
+a {
+    text-decoration: none;
+}
+
+/* Căn chỉnh form */
+.container {
+    max-width: 600px; /* Đặt chiều rộng tối đa cho form */
+    margin: 0 auto;   /* Căn giữa form trên trang */
+}
+
+.form-group {
+    display: flex;   /* Sử dụng flex để các phần tử nằm cùng dòng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.form-control {
+    flex: 1;            /* Cho phép ô tìm kiếm mở rộng đầy đủ chiều rộng */
+    margin-right: 10px;  /* Tạo khoảng cách giữa ô tìm kiếm và nút */
+    padding: 10px;       /* Thêm khoảng cách bên trong ô tìm kiếm */
+    font-size: 16px;     /* Tăng kích thước chữ */
+    border: 1px solid #ced4da; /* Đường viền mỏng và màu sáng */
+    border-radius: 5px;  /* Bo góc ô tìm kiếm */
+}
+
+.btn-primary {
+    padding: 10px 20px;   /* Tạo kích thước nút lớn hơn */
+    font-size: 16px;      /* Kích thước chữ cho nút */
+    background-color: #007bff;  /* Màu nền nút (blue) */
+    border: none;         /* Bỏ viền nút */
+    border-radius: 5px;   /* Bo góc nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;  /* Đổi màu nền khi hover */
+}
+
+
+
 
 
 

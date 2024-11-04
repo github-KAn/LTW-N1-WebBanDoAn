@@ -2,110 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Khmer&family=Kadwa:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend Tera&family=Kufam:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open Sans&family=Roboto:wght@400;700&display=swap');
-/* Tổng thể header */
-#header-wrapper {
-    background-color: #333; 
-    padding: 10px 0;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    color: white;
-    font-family: "Kadwa", sans-serif;
-    padding-left: 30px;
-}
-
-/* Logo bên trái */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo img {
-    width: 60px; 
-    margin-bottom: 5px;
-    border-radius: 50%;
-}
-
-.logo span {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Menu điều hướng */
-.main-menu a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px; 
-    font-family: 'Itim', cursive;
-    transition: color 0.3s ease; /* Hiệu ứng khi hover */
-}
-
-.main-menu a:hover {
-    color: #ddd; /* Màu khi hover */
-}
-
-.right-menu {
-    display: flex;
-    align-items: center;
-}
-
-.right-menu a {
-    color: white;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'Itim', cursive; /* Sử dụng font Itim cho các liên kết bên phải */
-}
-
-.right-menu img {
-    width: 20px; /* Kích thước biểu tượng ngôn ngữ và giỏ hàng */
-    vertical-align: middle; /* Căn giữa biểu tượng với chữ */
-    filter: brightness(0) invert(1); /* Chuyển biểu tượng thành màu trắng */
-    -webkit-filter: brightness(0) invert(1);
-}
-
-.right-menu span {
-    color: white;
-    margin: 0 10px;
-    font-size: 18px;
-}
-
-/* Phần giỏ hàng */
-.cart {
-    position: relative;
-    display: inline-block;
-
-}
-#header-wrapper .cart #cart-count {
-    position: absolute;
-    top: -5px; /* Điều chỉnh vị trí từ trên xuống */
-    right: -15px; /* Điều chỉnh vị trí từ phải sang */
-    background-color: #FF6600; /* Nền màu đen */
-    color: white; /* Màu đỏ cho số */
-    font-size: 12px; /* Kích thước chữ nhỏ */
-    padding: 2px 4px; /* Tạo khoảng đệm cho số */
-    border-radius: 50%; /* Tạo nền tròn */
-    display: none; /* Ẩn mặc định, hiển thị khi có sản phẩm */
-    font-weight: bold; /* Đậm chữ */
-    line-height: 1;
-    min-width: 18px; /* Đảm bảo có chiều rộng tối thiểu cho hình tròn */
-    text-align: center;
-}
-.cart img {
-    width: 40px; /* Kích thước biểu tượng giỏ hàng lớn hơn */
-}
 
 * {
     margin: 0;
@@ -292,7 +189,7 @@ i {
     font-weight: bold;
     padding-right: 20px;
 }
-.order_1 {
+.order_1, .cart-items-container {
     max-width: 1200px;
     margin: auto;
     border: 1px solid #ccc;
@@ -304,11 +201,14 @@ i {
     justify-content: space-between;
     padding: 10px 0;
 }
-.order-header {
+.order-header{
     background-color: #ddd;
     font-weight: bold;
 }
 .order-row {
+    border-top: 1px solid #eee;
+}
+order-row-product {
     border-top: 1px solid #eee;
 }
 .order-total-row {
@@ -318,7 +218,19 @@ i {
 }
 .order-label {
     flex: 1;
+    text-align: center;
+}
+.order-label-pr, .order-label-qtt {
+    flex: 1;
+    text-align: right;
+}
+.order-label-product {
+    flex: 1;
     text-align: left;
+}
+.order-label-price, .order-label-quantity {
+    flex: 1;
+    text-align: center;
 }
 .order-value {
     flex: 1;
@@ -392,92 +304,89 @@ p {
 
 .space_1 {
     background-color:#f4f4f4 ;
-    height: 70px;
-}
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-    font-family: 'Arial', sans-serif;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 100px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.footer-logo h2 {
-    font-size: 24px;
-    color: #fff;
-    margin: 0;
-    font-family: "Kadwa", sans-serif;
-}
-
-.footer-company-info,
-.footer-links,
-.footer-follow-us {
-    max-width: 300px;
-}
-
-.footer-company-info h3,
-.footer-links h3,
-.footer-follow-us h3 {
-    color: #ff6b00;
-    margin-bottom: 10px;
-    font-size: 15px;
-    font-family: "Kadwa", sans-serif;
-
 }
 
 .footer-company-info p {
-    margin: 5px 0;
-    line-height: 1.6;
-    font-family: "Kadwa", sans-serif;
-    font-size: 13px;
-
+    color: #fff;
 }
 
-.footer-links ul {
-    font-family: "Kadwa", sans-serif;
-    font-size: 13px;
-}
 
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-follow-us .social-icons {
+.button-section {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: 20px;
 }
 
-.footer-follow-us .social-icons img {
-    width: 30px;
-    height: 30px;
+.button-back,
+.button-complete {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.footer-certification img {
-    width: 100px;
+
+.button-back {
+    background-color: #bdc3c7;
+    color: #2c3e50;
 }
 
-.footer-follow-us h3 {
+.button-back:hover {
+    background-color: #95a5a6;
+}
+
+.button-complete {
+    background-color: #FF6600;
+    color: #fff;
+}
+
+.button-complete:hover {
+    background-color: #2ecc71;
+}
+
+
+
+
+
+
+
+
+
+
+/* Định dạng cho phần product-section */
+.product-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
     margin-bottom: 10px;
-    color: #ff6b00;
+    padding-left: 0; /* Điều chỉnh lề trái cho cả section */
 }
+.product-info {
+    display: flex;
+    align-items: center;
+    padding-left: 50px; /* Điều chỉnh vị trí sát lề trái */
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+.product-price, .product-quantity {
+    text-align: center;
+    font-size: 16px;
+    color: #686868;
+}
+.product-total {
+    text-align: center;
+    font-size: 16px;
+    color: #FF6600;
+}
+
+
+
+
+
