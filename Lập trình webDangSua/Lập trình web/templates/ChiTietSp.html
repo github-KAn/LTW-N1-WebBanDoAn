@@ -1,0 +1,88 @@
+{% extends "inherit.html" %}
+
+{% block title %}Đặt Hàng{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleSp.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+        <div class="step-container">
+            <div class="step_1 step-active">
+                <i class="fas fa-shopping-cart"></i> Đặt hàng
+            </div>
+            <div class="step_1">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </div>
+            <div class="step_2">
+                <i class="fas fa-dollar-sign"></i> Thanh toán
+            </div>
+            <div class="step_3">
+                <i class="fas fa-check"></i> Xác nhận
+            </div>
+        </div>
+    <div class="item" data-name="Gói LUNCH" data-price="500000" data-image="{{ url_for('static', filename='images/lunch.png') }}">
+        <div class="product-section">
+            <div class="product-image">
+                <img src="{{ url_for('static', filename='images/slim.png') }}" alt="Gói Slim" />
+            </div>
+            <div class="product-details">
+                <h1>GÓI SLIM (*NEW)</h1>
+                <p>Gói SLIM gồm 2 bữa TRƯA - TỐI (Hạn chế tinh bột, GẤP ĐÔI rau)</p>
+                <ul>
+                    <li>Sử dụng thực đơn 2 bữa TRƯA - TỐI tại trang fitfood.vn/menu.</li>
+                    <li>Giao 02 phần ăn tận nơi mỗi ngày, từ thứ 2 đến thứ 6.</li>
+                    <li>Calories dao động từ 300 - 400 Kcal / phần ăn.</li>
+                    <li>Lưu ý gói SLIM này HẠN CHẾ tinh bột, ít đường, gấp đôi lượng rau củ và giảm lượng đạm.</li>
+                </ul>
+                <p>* Thích hợp cho các bạn siết cân, thích ăn nhiều rau, giảm cân nhanh, và tiết kiệm thời gian.</p>
+
+                <div class="options">
+                    <label>
+                        <input type="radio" name="plan" checked> Gói Tuần - 5 ngày
+                    </label>
+                    <label>
+                        <input type="radio" name="plan"> Gói Tháng (4 tuần)
+                    </label>
+                </div>
+
+                <div class="price">
+                    600,000đ
+                </div>
+
+                <button class="add-to-cart">Thêm vào giỏ</button>
+                <div class="menu-image">
+                    <img src="{{ url_for('static', filename='images/anhchitietslim.jpg') }}" alt="Weekly Menu" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="space_1"></div>
+{% endblock %}
+
+
+<div id="cart-summary">
+        <div id="cart-summary-header">
+            <h3>GIỎ HÀNG</h3>
+            <button class="close-btn">X</button> <!-- Nút thoát -->
+        </div>
+
+        <div id="cart-items">
+            <!-- Sản phẩm sẽ được thêm vào đây -->
+        </div>
+
+        <div id="cart-summary-footer">
+            <div class="temp-total">
+                Tạm tính: <span id="total-price">0đ</span>
+            </div>
+            <a href="{{ url_for('dat_hang') }}">
+            <button class="order-btn">Đặt hàng</button>
+            </a>
+        </div>
+    </div>
+    <!-- Lớp overlay để che nội dung khi giỏ hàng mở -->
+    <div class="overlay"></div>
+    <script src="{{ url_for('static', filename='js/script3.js') }}"></script>
