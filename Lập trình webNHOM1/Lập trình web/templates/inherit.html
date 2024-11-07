@@ -26,6 +26,7 @@
 
             <div class="right-menu">
                 <a href="#" id="openRegister">Đăng ký</a>
+                <h1>{{fullname }}</h1>
                 <span>|</span>
                 <a href="#" id="openLogin">Đăng nhập</a>
                 <span>|</span>
@@ -46,7 +47,7 @@
             <span class="close" id="closeRegister">&times;</span>
             <h2>Đăng ký</h2>
             <p>Bạn đã có tài khoản? Vui lòng <a href="#" id="showLogin"> Đăng nhập</a></p>
-            <form>
+            <form action="/register" method="post">
                 <label for="fullname">Họ & tên:</label>
                 <input type="text" id="fullname" name="fullname" required>
                 <label for="regEmail">Email:</label>

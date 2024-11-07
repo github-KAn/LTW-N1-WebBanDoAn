@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session, url_for, flash
+from psutil import users
 from pymongo import MongoClient
 from bson.objectid import ObjectId, InvalidId
 from waitress import serve
@@ -26,6 +27,7 @@ try:
     products_processed_items_collection = db['products_processed_items']
     products_drinks_collection = db['products_drinks']
     products_gifts_collection = db['products_gifts']
+    user_collection = db['user']
 except Exception as e:
     print(f"Lỗi kết nối MongoDB: {e}")
 
@@ -109,5 +111,15 @@ def xac_nhan():
 def xac_nhan_thanh_toan():
     return render_template('XacNhanThanhToan.html')
 
+@app.route('/register', methods=['POST'])
+def register():
+    users_list=list(user_collection.find())
+    name=request.form["fullname"]
+    print(request.form["regEmail"])
+    print(name)
+    return render_template('Trangchu.html',fullname=name)
+@app.route('/login')
+def login():
+    return render_template('Trangchu.html')
 if __name__ == '__main__':
     app.run(debug=False)
