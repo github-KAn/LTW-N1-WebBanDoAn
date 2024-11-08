@@ -654,6 +654,8 @@ products_packages = [
 ]
 db.products_packages.delete_many({})
 db.products_packages.insert_many(products_packages)
+user=[{"name":"a","email":"as@a","password":"password"},{"name":"a1","email":"as1","password":"password1"}]
+db.users.insert_many(user)
 print("Dữ liệu cho mục 'CHI TIẾT SẢN PHẨM GÓI ĂN' đã được thêm vào cơ sở dữ liệu.")
 
 

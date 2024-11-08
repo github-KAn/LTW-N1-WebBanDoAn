@@ -26,7 +26,6 @@
 
             <div class="right-menu">
                 <a href="#" id="openRegister">Đăng ký</a>
-                <h1>{{fullname }}</h1>
                 <span>|</span>
                 <a href="#" id="openLogin">Đăng nhập</a>
                 <span>|</span>
@@ -75,6 +74,12 @@
                 <p><a href="#">Quên mật khẩu?</a></p>
                 <button type="submit">Đăng nhập</button>
             </form>
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -218,6 +223,27 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
 
+  <script type="text/javascript">
+    $(document).on('submit','#todo-form',function(e)
+                   {
+      console.log('hello');
+      e.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/',
+        data:{
+          todo:$("#todo").val()
+        },
+        success:function()
+        {
+          alert('saved');
+        }
+      })
+    });
+  </script>
 </body>
 </html>
