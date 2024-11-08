@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for, flash
+from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
 from pymongo import MongoClient
 from bson.objectid import ObjectId, InvalidId
 from waitress import serve
@@ -113,18 +113,26 @@ def xac_nhan_thanh_toan():
 @app.route('/register', methods=['POST'])
 def register():
     user_list=list(user_collection.find())
-    name=request.form["fullname"]
-    email=request.form["regEmail"]
-    password=request.form["regPassword"]
+    # name=request.form["fullname"]
+    # email=request.form["regEmail"]
+    # password=request.form["regPassword"]
+
+    name = request.json["name"]
+    email = request.json["email"]
+    password = request.json["pass"]
+
     print(user_collection.count_documents({"email":email, "name":name}))
     if user_collection.count_documents({"email":email, "name":name})!=0:
         flash(" Người dùng này đã có trong tài khoản")
         print(" Người dùng này đã có trong tài khoản")
-        return render_template('Trangchu.html')
+
+        # return render_template('Trangchu.html', notif={"error":"Người dùng này đã có trong tài khoản"})
+        return jsonify({"result":"Người dùng này đã có trong tài khoản "})
     else:
         print(name,email,password)
         user_collection.insert_one({"name":name,"email":email,"password":password})
-        return render_template('Trangchu.html', fullname=name,email=email,password=password)
+        return jsonify({"result":{"name": name, "email": email, "password": password}})
+        # return render_template('Trangchu.html', fullname=name,email=email,password=password,notif={})
 
 @app.route('/login')
 def login():
