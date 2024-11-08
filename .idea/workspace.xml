@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16d8d415-f38a-4cf8-ae96-369af4487bf2" name="Changes" comment="add files">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d4bc839f-0cd6-4b32-9001-f92404c01f78" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/inherit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/inherit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +19,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -33,99 +29,80 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/github-KAn/LTW-N1-WebBanDoAn.git&quot;,
-    &quot;accountId&quot;: &quot;f99b11b8-8de4-4cc4-9568-95963649b9e6&quot;
+    &quot;accountId&quot;: &quot;36017d52-7866-479c-a7dd-cb74bec5ee4b&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2oCOuBG2kqBEcWGp58manB51g21" />
+  <component name="ProjectId" id="2oEI1GQHsBwOgG0ZSpFYpRX3mZI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.app.executor": "Run",
     "Python.seed_data.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/NEU/PycharmProjects/Develop-Branch/LTW-N1-WebBanDoAn",
-    "settings.editor.selected.configurable": "settings.sync"
+    "git-widget-placeholder": "master"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\NEU\PycharmProjects\Develop-Branch\LTW-N1-WebBanDoAn" />
-    </key>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="LTW-N1-WebBanDoAn" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="LTW-N1-WebBanDoAn" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16d8d415-f38a-4cf8-ae96-369af4487bf2" name="Changes" comment="" />
-      <created>1730370311599</created>
+      <changelist id="d4bc839f-0cd6-4b32-9001-f92404c01f78" name="Changes" comment="" />
+      <created>1730428092809</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1730370311599</updated>
+      <updated>1730428092809</updated>
     </task>
-    <task id="LOCAL-00001" summary="commit">
-      <option name="closed" value="true" />
-      <created>1730371777881</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1730371777881</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add files">
-      <option name="closed" value="true" />
-      <created>1730371860932</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1730371860932</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add files">
-      <option name="closed" value="true" />
-      <created>1730970085826</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1730970085826</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add files">
-      <option name="closed" value="true" />
-      <created>1730972626264</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1730972626265</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
-    <MESSAGE value="add files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add files" />
+    <MESSAGE value="Add files via upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
