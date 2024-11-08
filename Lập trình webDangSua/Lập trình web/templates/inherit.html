@@ -46,7 +46,7 @@
             <span class="close" id="closeRegister">&times;</span>
             <h2>Đăng ký</h2>
             <p>Bạn đã có tài khoản? Vui lòng <a href="#" id="showLogin"> Đăng nhập</a></p>
-            <form action="/register" method="post">
+            <form>
                 <label for="fullname">Họ & tên:</label>
                 <input type="text" id="fullname" name="fullname" required>
                 <label for="regEmail">Email:</label>
@@ -74,12 +74,6 @@
                 <p><a href="#">Quên mật khẩu?</a></p>
                 <button type="submit">Đăng nhập</button>
             </form>
-            {% for message in get_flashed_messages() %}
-            <div class="alert alert-warning">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{ message }}
-            </div>
-            {% endfor %}
         </div>
     </div>
 
@@ -223,27 +217,6 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-          crossorigin="anonymous"></script>
 
-  <script type="text/javascript">
-    $(document).on('submit','#todo-form',function(e)
-                   {
-      console.log('hello');
-      e.preventDefault();
-      $.ajax({
-        type:'POST',
-        url:'/',
-        data:{
-          todo:$("#todo").val()
-        },
-        success:function()
-        {
-          alert('saved');
-        }
-      })
-    });
-  </script>
 </body>
 </html>

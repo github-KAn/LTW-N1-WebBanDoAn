@@ -1,0 +1,176 @@
+{% extends "inherit.html" %}
+
+{% block title %}Thanh Toán{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleThanhToan.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container_1">
+    <div class="step-container">
+        <div class="step-container">
+            <a class="step_1 step-active" href="{{ url_for('dat_hang') }}">
+                <i class="fas fa-shopping-cart"></i> Đặt hàng
+            </a>
+            <a class="step_1" href="{{ url_for('chinh_sua') }}">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </a>
+            <a class="step_2" href="{{ url_for('thanh_toan') }}">
+                <i class="fas fa-dollar-sign"></i> Thanh toán
+            </a>
+            <div class="step_3" href="{{ url_for('xac_nhan') }}">
+                <i class="fas fa-check"></i> Xác nhận
+            </div>
+        </div>
+         <!-- Phần địa chỉ giao hàng -->
+    </div>
+    <div class="Header">
+        <h2>THANH TOÁN</h2>
+    </div>
+    <div class="address-section">
+        <h3>Địa chỉ giao hàng</h3>
+        <p>Bạn vui lòng nhập địa chỉ để chúng tôi giao hàng cho bạn.</p>
+        <button class="add-address-btn" onclick="openAddressForm()">+ Thêm địa chỉ mới</button>
+        <!-- Form thêm địa chỉ mới -->
+    <div id="addressForm" class="modal">
+        <div class="modal-content">
+            <h2>Thêm Địa Chỉ Mới</h2>
+            <form>
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="gender">Giới tính:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                </select>
+
+                <label for="district">Quận:</label>
+                <select id="district" name="district">
+                    <option value="dongda">Đống Đa</option>
+                    <option value="caugiay">Cầu Giấy</option>
+                    <option value="thanhxuan">Thanh Xuân</option>
+                </select>
+
+                <label for="ward">Phường:</label>
+                <input type="text" id="ward" name="ward" required>
+
+                <label for="address">Số nhà, Tên đường:</label>
+                <input type="text" id="address" name="address" required>
+
+                <div class="default-address">
+                    <input type="checkbox" id="default" name="defaultAddress">
+                    <label for="defaultAddress">Đặt làm địa chỉ mặc định</label>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn-cancel" onclick="closeAddressForm()">Trở về</button>
+                    <button type="submit" class="btn-submit">Hoàn thành</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+        <script src="{{ url_for('static', filename='js/scriptThanhtoan.js') }}"></script>
+
+    </div>
+
+    <!-- Bảng sản phẩm -->
+    <div class="table-header">
+        <div class="nameproduct">Tên sản phẩm</div>
+        <div>Giá</div>
+        <div>Số lượng</div>
+        <div>Tổng đơn hàng</div>
+    </div>
+
+    <!-- Hiển thị từng sản phẩm trong giỏ hàng -->
+{% for item in cart_items %}
+<div class="product-section">
+    <div class="product-info">
+        <img src="{{ item['image'] }}" alt="{{ item['name'] }}">
+        <span class="product-name">{{ item['name'] }}</span>
+    </div>
+    <span class="product-price">{{ "{:,.0f}".format(item['price']) if item['price'] is not none and item['price'] >= 0 else 'N/A' }}đ</span>
+    <span class="product-quantity">{{ item['quantity'] if item['quantity'] is not none and item['quantity'] >= 0 else 0 }}</span>
+    <span class="product-total">{{ "{:,.0f}".format(item['price'] * item['quantity']) if item['price'] is not none and item['quantity'] is not none else 'N/A' }}đ</span>
+</div>
+{% endfor %}
+
+<!-- Tính tổng đơn hàng -->
+<!-- Tính tổng đơn hàng -->
+<div class="summary-section">
+    <span class="summary-total">
+        <span class="tamtinh">Tạm tính :</span>
+        {{ "{:,.0f}".format(subtotal) }}đ
+    </span>
+</div>
+
+
+    <div class="container">
+        <!-- Mã khuyến mãi -->
+        <div class="section">
+            <h2>Mã khuyến mãi</h2>
+            <div class="promo-section">
+                <input type="text" class="input-box" placeholder="Nhập mã khuyến mãi">
+                <button class="button-red">Áp dụng</button>
+            </div>
+        </div>
+
+        <!-- Thời gian giao hàng -->
+        <div class="section">
+            <h2>Thời gian giao hàng</h2>
+            <select class="select-box">
+                <option>7:30 - 8:00am</option>
+                <option>8:00 - 8:30am</option>
+                <option>8:30 - 9:00am</option>
+                <option>9:00 - 9:30am</option>
+                <option>9:30 - 10:00am</option>
+                <option>10:00 - 10:30am</option>
+                <option>10:30 - 11:00am</option>
+                <option>Tối hôm trước (19 :00 - 22:00)</option>
+            </select>
+        </div>
+
+        <!-- Phương thức thanh toán -->
+        <div class="section">
+            <h2>Phương thức thanh toán</h2>
+            <select class="select-box">
+                <option>Thanh toán QR</option>
+                <option>Momo</option>
+                <option>Thanh toán tiền mặt</option>
+                <option>Thanh toán thẻ(có phí)</option>
+            </select>
+        </div>
+
+        <!-- Ghi chú -->
+        <div class="section">
+            <h2>Note</h2>
+            <textarea class="input-box" rows="3" placeholder="Ghi chú về địa chỉ giao hàng, số nhà, chung cư, tên tòa nhà văn phòng,..."></textarea>
+        </div>
+
+        <!-- Khối tổng đơn hàng -->
+        <div class="summary-section">
+            <div class="summary-details">
+                <p>Phí ship: {{ "{:,.0f}".format(shipping_fee) }}đ</p>
+                <p>Giảm giá: <span>{{ "{:,.0f}".format(discount) }}đ</span></p>
+                <p class="sum"><strong>Tổng đơn hàng:</strong>
+                    <span>{{ "{:,.0f}".format((cart_items | sum(attribute='price')) + shipping_fee - discount) }}đ</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Nút hoàn thành và trở về -->
+        <div class="button-section">
+            <button class="button-back">Trở về</button>
+            <a class="button-complete" href="{{ url_for('xac_nhan') }}">Hoàn thành</a>
+        </div>
+    </div>
+</div>
+    <div class="space_1"></div>
+
+{% endblock %}
