@@ -46,7 +46,7 @@
             <span class="close" id="closeRegister">&times;</span>
             <h2>Đăng ký</h2>
             <p>Bạn đã có tài khoản? Vui lòng <a href="#" id="showLogin"> Đăng nhập</a></p>
-            <form action="/register" method="post">
+            <form action="/register" method="post" id="regForm" onsubmit="alert_msg(event)">
                 <label for="fullname">Họ & tên:</label>
                 <input type="text" id="fullname" name="fullname" required>
                 <label for="regEmail">Email:</label>
@@ -55,7 +55,7 @@
                 <input type="password" id="regPassword" name="regPassword" required>
                 <label for="confirmPassword">Xác nhận mật khẩu:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required>
-                <button type="submit">Đăng ký</button>
+                <button type="submit" >Đăng ký</button>
             </form>
         </div>
     </div>
@@ -82,7 +82,29 @@
             {% endfor %}
         </div>
     </div>
+<!--    Jquery Cdn-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        function alert_msg(event){
+        event.preventDefault()
+        console.log(event.target.fullname.value)
+        e_target=event.target
+        $.ajax({
+                url: '/register',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ 'name': e_target.fullname.value, 'email':e_target.regEmail.value, 'pass':e_target.regPassword.value}),
+                success: function(response) {
+                    console.log(response.result);
+                    alert(response.result)
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
 
+        }
+    </script>
     <script>
         // Get modal elements
         var registerModal = document.getElementById("registerModal");
