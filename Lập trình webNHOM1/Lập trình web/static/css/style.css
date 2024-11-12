@@ -59,7 +59,9 @@ header {
 .main-menu a:hover {
     color: #ddd; /* Màu khi hover */
 }
-
+nav {
+    display:flex
+}
 .right-menu {
     display: flex;
     align-items: center;
