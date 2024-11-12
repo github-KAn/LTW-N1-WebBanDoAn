@@ -1,0 +1,9 @@
+.main-content {
+    padding: 2rem 2.8175rem;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}

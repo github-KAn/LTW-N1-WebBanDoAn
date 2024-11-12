@@ -129,5 +129,11 @@ def register():
 @app.route('/login')
 def login():
     return render_template('Trangchu.html')
+@app.route('/new')
+def new():
+    years_option=[]
+    for i in range (1900,2024):
+        years_option.append(i)
+    return render_template('TaiKhoan.html',years_option=years_option)
 if __name__ == '__main__':
     app.run(debug=False)
