@@ -1,3 +1,5 @@
+
+
 from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
 from pymongo import MongoClient
 from bson.objectid import ObjectId, InvalidId
@@ -29,7 +31,15 @@ try:
     user_collection = db['users']
 except Exception as e:
     print(f"Lỗi kết nối MongoDB: {e}")
-
+years_option=[]
+days_option=[]
+months_option=[]
+for i in range (1900,2025):
+    years_option.append(i)
+for i in range (1,13):
+    months_option.append(i)
+for i in range (1,32):
+    days_option.append(i)
 @app.route('/')
 def trang_chu():
     return render_template('Trangchu.html')
@@ -113,35 +123,42 @@ def xac_nhan_thanh_toan():
 @app.route('/register', methods=['POST'])
 def register():
     user_list=list(user_collection.find())
-    # name=request.form["fullname"]
-    # email=request.form["regEmail"]
-    # password=request.form["regPassword"]
+    name=request.form["fullname"]
+    email=request.form["regEmail"]
+    password=request.form["regPassword"]
 
-    name = request.json["name"]
-    email = request.json["email"]
-    password = request.json["pass"]
+    # name = request.json["name"]
+    # email = request.json["email"]
+    # password = request.json["pass"]
 
-    print(user_collection.count_documents({"email":email, "name":name}))
-    if user_collection.count_documents({"email":email, "name":name})!=0:
-        flash(" Người dùng này đã có trong tài khoản")
+    print(user_collection.count_documents({"$or":[{"name":"an"},{"email":"as@a"}]}))
+    if user_collection.count_documents({"$or":[{"name":"an"},{"email":"as@a"}]})!=0:
+        flash("Tên người dùng này hoặc email đã có trong tài khoản","notif")
         print(" Người dùng này đã có trong tài khoản")
 
         # return render_template('Trangchu.html', notif={"error":"Người dùng này đã có trong tài khoản"})
-        return jsonify({"result":"Người dùng này đã có trong tài khoản "})
+        return render_template('Trangchu.html', fullname=name,email=email,password=password)
     else:
         print(name,email,password)
         user_collection.insert_one({"name":name,"email":email,"password":password})
-        return jsonify({"result":{"name": name, "email": email, "password": password}})
-        # return render_template('Trangchu.html', fullname=name,email=email,password=password,notif={})
+        flash(" Đăng ký tài khoản thành công","notif")
+
+        return render_template('TaiKhoan.html', fullname=name,email=email,password=password)
 
 @app.route('/login')
 def login():
     return render_template('Trangchu.html')
+
+@app.route('/update_profile',methods=['GET','PUT','POST'])
+def update_profile():
+    if request.method == 'POST':
+        print(request.form)
+        print(request.form["email"])
+        # print(request.form.getlist())
+    return render_template('TaiKhoan.html',years_option=years_option,days_option=days_option, months_option=months_option)
 @app.route('/new')
 def new():
-    years_option=[]
-    for i in range (1900,2024):
-        years_option.append(i)
-    return render_template('TaiKhoan.html',years_option=years_option)
+
+    return render_template('TaiKhoan.html',years_option=years_option,days_option=days_option, months_option=months_option)
 if __name__ == '__main__':
     app.run(debug=False)

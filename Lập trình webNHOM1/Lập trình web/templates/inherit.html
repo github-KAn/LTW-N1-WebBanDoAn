@@ -38,7 +38,19 @@
             </div>
         </header>
     </div>
+    {% with notif = get_flashed_messages(category_filter=["notif"]) %}
+    {% if notif %}
 
+    <div class="alert-notif" id="alert" onclick="closeAlert()">
+<!--        <span class="close" id="closeAlert">&times;</span>-->
+              <ul>
+                {%- for msg in notif %}
+                <li >{{ msg }}</li>
+                {% endfor -%}
+            </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
 
     <!-- Registration Modal -->
     <div id="registerModal" class="modal">
@@ -46,7 +58,7 @@
             <span class="close" id="closeRegister">&times;</span>
             <h2>Đăng ký</h2>
             <p>Bạn đã có tài khoản? Vui lòng <a href="#" id="showLogin"> Đăng nhập</a></p>
-            <form action="/register" method="post" id="regForm" onsubmit="alert_msg(event)">
+            <form action="/register" method="post" id="regForm">
                 <label for="fullname">Họ & tên:</label>
                 <input type="text" id="fullname" name="fullname" required>
                 <label for="regEmail">Email:</label>
@@ -74,34 +86,14 @@
                 <p><a href="#">Quên mật khẩu?</a></p>
                 <button type="submit">Đăng nhập</button>
             </form>
-            {% for message in get_flashed_messages() %}
-            <div class="alert alert-warning">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{ message }}
-            </div>
-            {% endfor %}
         </div>
     </div>
 <!--    Jquery Cdn-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript">
-        function alert_msg(event){
-        event.preventDefault()
-        console.log(event.target.fullname.value)
-        e_target=event.target
-        $.ajax({
-                url: '/register',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({ 'name': e_target.fullname.value, 'email':e_target.regEmail.value, 'pass':e_target.regPassword.value}),
-                success: function(response) {
-                    console.log(response.result);
-                    alert(response.result)
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
+    <script>
+        function closeAlert(){
+        const alert = document.getElementById("alert");
+        alert.remove();
 
         }
     </script>
