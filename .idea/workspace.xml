@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16d8d415-f38a-4cf8-ae96-369af4487bf2" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/static/images/no-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/static/css/styleTaiKhoan.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/static/images/no-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanDiachi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanDiem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanLichSu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanThongTin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/TaiKhoanDiem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/TaiKhoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/TaiKhoan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/inherit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/inherit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,14 +58,17 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/An/code/python/PyCharmProjects/LTW-N1-WebBanDoAn/Lập trình webNHOM1/Lập trình web/static/images",
+    "last_opened_file_path": "D:/An/code/python/PyCharmProjects/LTW-N1-WebBanDoAn/Lập trình web Nhóm 1 - 13-11/Lập trình web/static/images",
     "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\An\code\python\PyCharmProjects\LTW-N1-WebBanDoAn\Lập trình web Nhóm 1 - 13-11\Lập trình web\static\images" />
+      <recent name="D:\An\code\python\PyCharmProjects\LTW-N1-WebBanDoAn\Lập trình web Nhóm 1 - 13-11\Lập trình web\templates" />
+      <recent name="D:\An\code\python\PyCharmProjects\LTW-N1-WebBanDoAn\Lập trình webNHOM1\Lập trình web\templates" />
+      <recent name="D:\An\code\python\PyCharmProjects\LTW-N1-WebBanDoAn\Lập trình web Nhóm 1 - 13-11\Lập trình web\static\css" />
       <recent name="D:\An\code\python\PyCharmProjects\LTW-N1-WebBanDoAn\Lập trình webNHOM1\Lập trình web\static\images" />
-      <recent name="C:\Users\NEU\PycharmProjects\Develop-Branch\LTW-N1-WebBanDoAn" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -136,7 +143,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731492211678</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="commit">
+      <option name="closed" value="true" />
+      <created>1731495933575</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731495933575</updated>
+    </task>
+    <task id="LOCAL-00009" summary="commit">
+      <option name="closed" value="true" />
+      <created>1731495997258</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731495997258</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
