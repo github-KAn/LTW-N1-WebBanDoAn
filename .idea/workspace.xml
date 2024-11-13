@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16d8d415-f38a-4cf8-ae96-369af4487bf2" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/static/css/styleTaiKhoan.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/static/images/no-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanDiachi.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanDiem.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanLichSu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình web Nhóm 1 - 13-11/Lập trình web/templates/TaiKhoanThongTin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/TaiKhoanDiem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/TaiKhoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Lập trình webNHOM1/Lập trình web/templates/TaiKhoan.html" afterDir="false" />
-    </list>
+    <list default="true" id="16d8d415-f38a-4cf8-ae96-369af4487bf2" name="Changes" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +148,31 @@
       <option name="project" value="LOCAL" />
       <updated>1731495997258</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit">
+      <option name="closed" value="true" />
+      <created>1731497559026</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731497559026</updated>
+    </task>
+    <task id="LOCAL-00011" summary="commit">
+      <option name="closed" value="true" />
+      <created>1731497674153</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731497674153</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commit">
+      <option name="closed" value="true" />
+      <created>1731497760224</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1731497760224</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
