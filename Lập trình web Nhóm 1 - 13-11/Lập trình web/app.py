@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for, flash
+from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
 from pymongo import MongoClient
 from bson.objectid import ObjectId, InvalidId
 from waitress import serve
@@ -27,8 +27,10 @@ try:
     products_drinks_collection = db['products_drinks']
     products_gifts_collection = db['products_gifts']
     user_collection = db['users']
+    orders_collection=db['orders']
 except Exception as e:
     print(f"Lỗi kết nối MongoDB: {e}")
+
 
 #Data hiển thị cho form lựa chọn
 years_option=[]
@@ -42,6 +44,7 @@ for i in range (1,32):
     days_option.append(i)
 @app.route('/')
 def trang_chu():
+
     return render_template('Trangchu.html')
 
 @app.template_filter('number_format')
@@ -97,6 +100,8 @@ def faqs():
 @app.route('/thanhtoan')
 def thanh_toan():
     cart_items = session.get('cart', [])
+
+    print(f"cart_items:{cart_items}")
     shipping_fee = 30000
     discount = 0
 
@@ -150,14 +155,12 @@ def search():
 # Đăng ký đăng nhập
 @app.route('/register', methods=['POST'])
 def register():
-    user_list=list(user_collection.find())
     name=request.form["fullname"]
     email=request.form["regEmail"]
     password=request.form["regPassword"]
-    session["notif"]=""
+    session.pop("notif",None)
     print(user_collection.count_documents({"$or":[{"name":name},{"email":email}]}))
     if user_collection.count_documents({"$or":[{"name":name},{"email":email}]})!=0:
-        session.pop("notif")
         flash("Tên người dùng này hoặc email đã có trong tài khoản","notif")
         print(" Người dùng này đã có trong tài khoản")
 
@@ -168,11 +171,17 @@ def register():
         session['email'] = email
         session.pop("_flashes",None)
         flash(" Đăng ký tài khoản thành công","notif")
-        user_collection.insert_one({"name": name, "email": email, "password": password})
+
+        max_id = user_collection.find().sort({"user_id": -1}).limit(1).to_list()[0]["user_id"]
+        print("max id:", max_id)
+        new_id=max_id+1
+        user_collection.insert_one({"name": name, "email": email, "password": password,"user_id":new_id})
         return render_template('TaiKhoan.html', fullname=name,email=email,password=password)
 
 @app.route('/login', methods=["POST"])
 def login():
+    session.pop('username', None)
+    session.pop('email', None)
     email = request.form["loginEmail"]
     password = request.form["loginPassword"]
     if user_collection.find_one({"email":email}):
@@ -180,7 +189,6 @@ def login():
         if user:
             session['username'] = user["name"]
             session['email'] = user["email"]
-            print(user,type(user))
             print("Đăng nhập thành công")
             flash("Đăng nhập thành công","notif")
         else:
@@ -198,15 +206,17 @@ def logout():
     session.pop("_flashes",None)
     return render_template('Trangchu.html')
 @app.route('/update_profile',methods=['GET','PUT','POST'])
-
 def update_profile():
     if request.method == 'POST':
         print(request.form)
         print(request.form["email"])
     return render_template('TaiKhoan.html',years_option=years_option,days_option=days_option, months_option=months_option)
 
+# @app.route("/xac_nhan", methods=['POST'])
+# def xac_nhan():
+#
 @app.route('/TaiKhoan')
 def TaiKhoan():
     return render_template('TaiKhoan.html',years_option=years_option,days_option=days_option, months_option=months_option)
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)

@@ -28,18 +28,18 @@
             <div class="right-menu">
                 {% if session["username"] %}
                 <div class="user">
-                    <div class="user-nav d-flex">
+                    <div class="user-nav">
                                     <div class="avatar" >
-<!--                                        <a href="{{ url_for('TaiKhoan') }}" >-->
-<!--                                            <img class="tk-avatar" src="{{ url_for('static', filename='images/no-image.png') }}" alt="">-->
-<!--                                        </a>-->
-                                        <a href="{{ url_for('TaiKhoan') }}" class="name"><strong>Xin Chào {{ session["username"] }}</strong></a>
+                                        <a href="{{ url_for('TaiKhoan') }}" >
+                                            <img class="tk-avatar" src="{{ url_for('static', filename='images/no-image.png') }}" alt="">
+                                        </a>
+<!--                                        <a href="{{ url_for('TaiKhoan') }}" class="name"><strong> {{ session["username"] }}</strong></a>-->
+<!--                                        <br/><a href="{{ url_for('logout') }}">Thoát</a>-->
+                                    </div>
+                                    <div class="welcome" >
+                                        <a href="{{ url_for('TaiKhoan') }}" class="name"><strong> {{ session["username"] }}</strong></a>
                                         <br/><a href="{{ url_for('logout') }}">Thoát</a>
                                     </div>
-<!--                                    <div class="welcome" >-->
-<!--                                        <a href="{{ url_for('TaiKhoan') }}" class="name"><strong>Xin Chào {{ session["username"] }}</strong></a>-->
-<!--                                        <br/><a href="{{ url_for('logout') }}">Thoát</a>-->
-<!--                                    </div>-->
                                 </div>
                 </div>
                 {% else %}

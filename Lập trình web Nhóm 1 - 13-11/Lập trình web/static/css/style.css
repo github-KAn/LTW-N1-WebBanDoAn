@@ -59,11 +59,6 @@ header {
 .main-menu a:hover {
     color: #ddd; /* Màu khi hover */
 }
-.tk-avatar{
-    width: 2rem;
-    height: 2rem;
-    border-radius:70%;
-}
 
 .right-menu {
     display: flex;
@@ -516,4 +511,13 @@ td.item-quantity {
     text-align: center; /* Căn giữa cho ô nhập số lượng */
 }
 
+
+.avatar img{
+    width: 3rem;
+    height: 3rem;
+    border-radius:70%;
+}
+.user-nav{
+    display:flex;
+}
 

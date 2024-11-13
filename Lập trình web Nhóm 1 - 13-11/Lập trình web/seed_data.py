@@ -22,6 +22,7 @@ products_packages_collection = db['products_packages']
 products_processed_items_collection = db['products_processed_items']
 products_drinks_collection = db['products_drinks']
 products_gifts_collection = db['products_gifts']
+orders_collection=db['orders']
 
 
 # Dữ liệu các gói ăn
@@ -899,3 +900,57 @@ products_gifts = [
 db.products_gifts.delete_many({})
 db.products_gifts.insert_many(products_gifts)
 print("Dữ liệu cho mục 'CHI TIẾT SẢN PHẨM QUÀ TẶNG' đã được thêm vào cơ sở dữ liệu.")
+# db.users.delete_many({})
+# user=[{"name":"a","email":"as@a","password":"password","user_id":1},
+#       {"name":"a1","email":"as1","password":"password1","user_id":2}]
+# db.users.insert_many(user)
+# print("Dữ liệu cho mục 'người dùng' đã được thêm vào cơ sở dữ liệu.")
+orders=[
+    {"id": 1,
+     "user_id":1,
+     "status":"waiting",
+     "cart_items":{
+        "id": 1,
+        "name": "Gói SLIM",
+        "description": "Gói SLIM gồm 2 bữa TRƯA - TỐI (Hạn chế tinh bột, GẤP ĐÔI rau)",
+        "details": [
+            "Sử dụng thực đơn 2 bữa TRƯA - TỐI tại trang fitfood.vn/menu.",
+            "Giao 02 phần ăn tận nơi mỗi ngày, từ thứ 2 đến thứ 6.",
+            "Calories dao động từ 300 - 400 Kcal / phần ăn.",
+            "Lưu ý gói SLIM này HẠN CHẾ tinh bột, ít đường, gấp đôi lượng rau củ và giảm lượng đạm."
+        ],
+        "suitable_for": "* Thích hợp cho các bạn siết cân, thích ăn nhiều rau, giảm cân nhanh, và tiết kiệm thời gian.",
+        "options": [
+            {"plan": "Gói Tuần - 5 ngày", "selected": True},
+            {"plan": "Gói Tháng (4 tuần)", "selected": False}
+        ],
+        "price": 600000,
+        "image": "images/slim.png"  # Đường dẫn hình ảnh sản phẩm
+        }
+     },
+    {"id": 2,
+    "userid":1,
+    "status":"finished",
+    "cart_items":{
+        "id": 1,
+        "name": "Gói SLIM",
+        "description": "Gói SLIM gồm 2 bữa TRƯA - TỐI (Hạn chế tinh bột, GẤP ĐÔI rau)",
+        "details": [
+            "Sử dụng thực đơn 2 bữa TRƯA - TỐI tại trang fitfood.vn/menu.",
+            "Giao 02 phần ăn tận nơi mỗi ngày, từ thứ 2 đến thứ 6.",
+            "Calories dao động từ 300 - 400 Kcal / phần ăn.",
+            "Lưu ý gói SLIM này HẠN CHẾ tinh bột, ít đường, gấp đôi lượng rau củ và giảm lượng đạm."
+        ],
+        "suitable_for": "* Thích hợp cho các bạn siết cân, thích ăn nhiều rau, giảm cân nhanh, và tiết kiệm thời gian.",
+        "options": [
+            {"plan": "Gói Tuần - 5 ngày", "selected": True},
+            {"plan": "Gói Tháng (4 tuần)", "selected": False}
+        ],
+        "price": 600000,
+        "image": "images/slim.png"  # Đường dẫn hình ảnh sản phẩm
+        }
+     }
+]
+# orders_collection.delete_many({})
+# orders_collection.insert_many(orders)
+# print("Dữ liệu cho mục 'Lịch sử Đơn Đặt Hàng' đã được thêm vào cơ sở dữ liệu.")
