@@ -66,6 +66,11 @@ nav {
     display: flex;
     align-items: center;
 }
+.tk-avatar{
+    width: 2rem;
+    height: 2rem;
+    border-radius:70%;
+}
 
 .right-menu a {
     color: white;

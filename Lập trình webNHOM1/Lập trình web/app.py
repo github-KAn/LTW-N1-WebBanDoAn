@@ -1,4 +1,4 @@
-
+# from crypt import methods
 
 from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
 from pymongo import MongoClient
@@ -131,34 +131,52 @@ def register():
     # email = request.json["email"]
     # password = request.json["pass"]
 
-    print(user_collection.count_documents({"$or":[{"name":"an"},{"email":"as@a"}]}))
-    if user_collection.count_documents({"$or":[{"name":"an"},{"email":"as@a"}]})!=0:
+    print(user_collection.count_documents({"$or":[{"name":name},{"email":email}]}))
+    if user_collection.count_documents({"$or":[{"name":name},{"email":email}]})!=0:
+        session.pop("notif")
         flash("Tên người dùng này hoặc email đã có trong tài khoản","notif")
         print(" Người dùng này đã có trong tài khoản")
 
-        # return render_template('Trangchu.html', notif={"error":"Người dùng này đã có trong tài khoản"})
         return render_template('Trangchu.html', fullname=name,email=email,password=password)
     else:
         print(name,email,password)
-        user_collection.insert_one({"name":name,"email":email,"password":password})
+        session['username']=name
+        session.pop("_flashes",None)
         flash(" Đăng ký tài khoản thành công","notif")
-
+        user_collection.insert_one({"name": name, "email": email, "password": password})
         return render_template('TaiKhoan.html', fullname=name,email=email,password=password)
 
-@app.route('/login')
+@app.route('/login', methods=["POST"])
 def login():
+    email = request.form["loginEmail"]
+    password = request.form["loginPassword"]
+    user=user_collection.find_one({"$and":[{"email":email},{"password":password}]})
+    if user_collection.find_one({"$and":[{"email":email},{"password":password}]}):
+        session['username'] = user["name"]
+        print(user,type(user))
+        print("Đăng nhập thành công")
+        flash("Đăng nhập thành công","notif")
+    else:
+        print("Đăng nhập ko thành công")
+        flash("Không tìm thấy người dùng này", "notif")
     return render_template('Trangchu.html')
 
+@app.route('/logout')
+def logout():
+    session.pop("username",None)
+    session.pop("_flashes",None)
+    return render_template('Trangchu.html')
 @app.route('/update_profile',methods=['GET','PUT','POST'])
+
 def update_profile():
     if request.method == 'POST':
         print(request.form)
         print(request.form["email"])
         # print(request.form.getlist())
     return render_template('TaiKhoan.html',years_option=years_option,days_option=days_option, months_option=months_option)
-@app.route('/new')
-def new():
 
+@app.route('/TaiKhoan')
+def TaiKhoan():
     return render_template('TaiKhoan.html',years_option=years_option,days_option=days_option, months_option=months_option)
 if __name__ == '__main__':
     app.run(debug=False)
