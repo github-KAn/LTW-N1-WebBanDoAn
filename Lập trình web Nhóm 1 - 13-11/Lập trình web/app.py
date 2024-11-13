@@ -178,6 +178,7 @@ def login():
     user=user_collection.find_one({"$and":[{"email":email},{"password":password}]})
     if user_collection.find_one({"$and":[{"email":email},{"password":password}]}):
         session['username'] = user["name"]
+        session['email'] = user["email"]
         print(user,type(user))
         print("Đăng nhập thành công")
         flash("Đăng nhập thành công","notif")

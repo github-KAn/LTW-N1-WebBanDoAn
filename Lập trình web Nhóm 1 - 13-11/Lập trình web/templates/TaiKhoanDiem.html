@@ -22,7 +22,7 @@
                         <img src="{{ url_for('static', filename='images/no-image.png') }}" alt="" border="0" class="img-fluid" />
                     </div>
                     <div class="info d-flex flex-column">
-                        <span class="name">{{ session["username" }}</span>
+                        <span class="name">{{ session["username"] }}</span>
                     </div>
                 </div>
                 <ul class="nav flex-column">
@@ -87,7 +87,7 @@
                         <div class="form-group row">
                             <label for="inputName" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Họ &amp; Tên</strong></label>
                             <div class="col-md-9 col-lg-8 col-xl-9">
-                                <input type="text" class="form-control" id="inputName" placeholder="" name="name" value="PhamAn2">
+                                <input type="text" class="form-control" id="inputName" placeholder="" name="name" value="{{ session['username'] }}">
 
                             </div>
                         </div>

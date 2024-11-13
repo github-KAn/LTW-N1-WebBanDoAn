@@ -65,7 +65,7 @@
                         <div class="form-group row info">
                             <label for="staticEmail" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Email</strong></label>
                             <div class="col-8 col-md-3 col-lg-5 hidden-text">
-                                <input type="text" class="form-control" id="staticEmail" name="email" value="2khanhanpham2705@gmail.com">
+                                <input type="text" class="form-control" id="staticEmail" name="email" value="{{ session['email'] }}">
                                 <span>******.com</span>
 
                             </div>
@@ -87,7 +87,7 @@
                         <div class="form-group row">
                             <label for="inputName" class="col-md-3 col-lg-4 col-xl-3 col-form-label"><strong>Họ &amp; Tên</strong></label>
                             <div class="col-md-9 col-lg-8 col-xl-9">
-                                <input type="text" class="form-control" id="inputName" placeholder="" name="name" value="PhamAn2">
+                                <input type="text" class="form-control" id="inputName" placeholder="" name="name" value="{{ session['username'] }}">
 
                             </div>
                         </div>
