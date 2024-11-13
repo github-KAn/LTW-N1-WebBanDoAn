@@ -175,16 +175,20 @@ def register():
 def login():
     email = request.form["loginEmail"]
     password = request.form["loginPassword"]
-    user=user_collection.find_one({"$and":[{"email":email},{"password":password}]})
-    if user_collection.find_one({"$and":[{"email":email},{"password":password}]}):
-        session['username'] = user["name"]
-        session['email'] = user["email"]
-        print(user,type(user))
-        print("Đăng nhập thành công")
-        flash("Đăng nhập thành công","notif")
+    if user_collection.find_one({"email":email}):
+        user = user_collection.find_one({"$and": [{"email": email}, {"password": password}]})
+        if user:
+            session['username'] = user["name"]
+            session['email'] = user["email"]
+            print(user,type(user))
+            print("Đăng nhập thành công")
+            flash("Đăng nhập thành công","notif")
+        else:
+            flash("Mật khẩu không đúng", "notif")
     else:
         print("Đăng nhập ko thành công")
-        flash("Không tìm thấy người dùng này", "notif")
+        flash("Email này không tồn tại trong hệ thống", "notif")
+
     return render_template('Trangchu.html')
 
 @app.route('/logout')
